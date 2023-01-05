@@ -9,7 +9,7 @@ function __autoload($class)
 }
 
 // update log data with datetime and ip
-
+/*
 $logname = "lunch_log.dat";
 $ip = $_SERVER['REMOTE_ADDR'];
 $log_flg = true;
@@ -25,5 +25,4 @@ if ($log_flg)
 {
 	$logdata = date("n-j-y H:i")."    ".$ip."\n";
 	file_put_contents($logname, $logdata, FILE_APPEND);
-}
-?>
+}*/
