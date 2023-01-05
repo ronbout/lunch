@@ -4,7 +4,8 @@
 // datbase connection code for lunch tracker programs
 require_once("lunch_include.php");
 
-$dbName = ($_SERVER['HTTP_HOST'] == 'localhost') ? 'weighttracker' : 'db710160895';
+// $dbName = ($_SERVER['HTTP_HOST'] == 'localhost') ? 'weighttracker' : 'db710160895';
+$dbName = 'weighttracker';
 
 // connect to database
 if (!($mysqli = mysqlConnect($dbName,$errCode)))
