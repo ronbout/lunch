@@ -1,0 +1,22 @@
+{
+  "name": "lunch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lunch.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ronbout/lunch.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ronbout/lunch/issues"
+  },
+  "homepage": "https://github.com/ronbout/lunch#readme",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.2.1"
+  }
+}

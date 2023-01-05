@@ -18,6 +18,7 @@ require_once("lunch_include.php");
 <head>
 	<meta charset="UTF-8">
 	<title>Calorie Lookup</title>
+	<link rel="stylesheet" type="text/css" href="assets/fonts/all.css">
 	<link rel="stylesheet" type="text/css" href="lunch.css">
 	<link rel="stylesheet" type="text/css" href="scrollbar.css">
 	<link rel="apple-touch-icon-precomposed" href="../images/cl_logo.png" />
