@@ -721,25 +721,52 @@ function slideRight(curPg, newPg) {
 function liCatsClick(catId, thisLi) {
   var thisCheck = thisLi.childNodes[0];
   if (menuFlg || srchFlg) return;
-  // update background image w class, then update catsObj
-  if (~thisCheck.className.indexOf("li_checked")) {
-    thisCheck.className = thisCheck.className.replace(
-      "li_checked",
-      "li_unchecked"
-    );
-    if (catId in catsObj) delete catsObj[catId];
-  } else {
+  if (0 === catId) {
+    if ("0" in catsObj) return;
+    // turn off any selected cats as View All takes precedence
+    var catListUl = document.querySelector("#ul_cats");
+    var catList = catListUl.querySelectorAll(".li_checked");
+    console.log(catList);
+    catList.forEach((e) => {
+      console.log("e: ", e);
+      console.log(e.className);
+      e.className = e.className.replace("li_checked", "li_unchecked");
+      console.log(e.className);
+    });
     thisCheck.className = thisCheck.className.replace(
       "li_unchecked",
       "li_checked"
     );
-    if (!(catId in catsObj)) catsObj[catId] = 1;
-    // if not 'View All' (id=0), then uncheck View All if necessary
-    if (catId != "0" && "0" in catsObj) {
-      var vParent = document.getElementById("view_all");
-      var v = vParent.childNodes[0];
-      v.className = v.className.replace("li_checked", "li_unchecked");
-      delete catsObj["0"];
+    catsObj = { 0: 1 };
+  } else {
+    // update background image w class, then update catsObj
+    if (~thisCheck.className.indexOf("li_checked")) {
+      thisCheck.className = thisCheck.className.replace(
+        "li_checked",
+        "li_unchecked"
+      );
+      if (catId in catsObj) delete catsObj[catId];
+      var catCnt = Object.keys(catsObj).length;
+      // if no categories are chosen, then turn on the View All
+      if (!catCnt) {
+        var vParent = document.getElementById("view_all");
+        var v = vParent.childNodes[0];
+        v.className = v.className.replace("li_unchecked", "li_checked");
+        catsObj = { 0: 1 };
+      }
+    } else {
+      thisCheck.className = thisCheck.className.replace(
+        "li_unchecked",
+        "li_checked"
+      );
+      if (!(catId in catsObj)) catsObj[catId] = 1;
+      // if not 'View All' (id=0), then uncheck View All if necessary
+      if (catId != "0" && "0" in catsObj) {
+        var vParent = document.getElementById("view_all");
+        var v = vParent.childNodes[0];
+        v.className = v.className.replace("li_checked", "li_unchecked");
+        delete catsObj["0"];
+      }
     }
   }
 }
