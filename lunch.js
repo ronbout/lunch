@@ -880,7 +880,7 @@ function menuClicked(thisMenu, pgNum) {
     case "menu_home_c":
     case "menu_home_f":
       if ((menuFlg || srchFlg) && menuOpt == "menu_home") return;
-      window.open("http://rboutilier.com", "_self");
+      window.open("http://www.rboutilier.com", "_self");
       break;
     case "menu_loadfoods":
     case "menu_loadfoods_arrow":

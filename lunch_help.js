@@ -93,7 +93,7 @@ function getFooterMenu(pgNum) {
 						</td>\
 						<td id="menu_creator" onclick="menuClicked(this,0)" ontouchstart="menuPressed(this)" \
 							ontouchend="menuReleased(this)" onmousedown="menuPressed(this)" onmouseup="menuReleased(this)">\
-							created by<br /><a id="home-link"  href="http://rboutilier.com/">Ron Boutilier</a>\
+							created by<br /><a id="home-link"  href="http://www.rboutilier.com/">Ron Boutilier</a>\
 						</td>\
 						<td id="menu_home" onclick="menuClicked(this,0)" ontouchstart="menuPressed(this)" \
 							ontouchend="menuReleased(this)" onmousedown="menuPressed(this)" onmouseup="menuReleased(this)">\
