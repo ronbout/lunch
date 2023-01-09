@@ -7,6 +7,8 @@
 ?>
 <div id="header">
 	<div id="backButton" ontouchstart="buttonPress(this)" ontouchend="buttonRelease(this)"
-		 onmousedown="buttonPress(this)" onmouseup="buttonRelease(this)">Back</div>
+		 onmousedown="buttonPress(this)" onmouseup="buttonRelease(this)">
+		<img src="./assets/images/back_button.png" alt="Back Button" />
+	</div>
 	<h1></h1>
 </div><!-- end of header -->

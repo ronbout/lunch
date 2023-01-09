@@ -4,15 +4,13 @@
 // footer menu
 // seemed like good idea to separate into own file
 
-
-function getHelpText(pgNum, restId, catsList)
-{
-	var helpText = "";
-	switch(pgNum)
-	{
-		default:
-		case 0:
-			helpText = '<h3>Overview</h3> \
+function getHelpText(pgNum, restId, catsList) {
+  var helpText = "";
+  switch (pgNum) {
+    default:
+    case 0:
+      helpText =
+        "<h3>Overview</h3> \
 				<p>Calorie Lookup provides nutritional information about a variety of foods \
 					for several popular fast food restaurants.</p> \
 				<p>Whether you are tracking your caloric intake are just want to make an informed \
@@ -38,10 +36,11 @@ function getHelpText(pgNum, restId, catsList)
 				<p>If you want to clear your selections on either the Category or Food Listing screen, use \
 					the Uncheck All option from the slideup menu.</p> \
 				<p>I hope you enjoy this program.  Feel free to visit my mobile website by pressing the \
-					Home icon on this screen.</p><p>&nbsp;</p>';
-			break;
-		case 1:
-			helpText = '<h3>Category Help</h3> \
+					Home icon on this screen.</p><p>&nbsp;</p>";
+      break;
+    case 1:
+      helpText =
+        "<h3>Category Help</h3> \
 				<p>This screen allows the user to limit the number of foods shown.  If you are only \
 					interested in salads, there is no reason to scroll through a listing of burgers and fries.</p> \
 				<p>View All Categories is not recommended as the number of food items for some restaurants \
@@ -55,10 +54,11 @@ function getHelpText(pgNum, restId, catsList)
 					and Uncheck All, which will clear the Category listing.</p> \
 				<p>Searching for a food will automatically bring up the Food Listing screen after searching \
 					for the entered phrase among the chosen categories.</p>\
-				<p>To return to the Restaurant listing, press the Back button in the upper left corner.</p><p>&nbsp;</p>';
-			break;
-		case 2:
-			helpText = '<h3>Food List Help</h3> \
+				<p>To return to the Restaurant listing, press the Back button in the upper left corner.</p><p>&nbsp;</p>";
+      break;
+    case 2:
+      helpText =
+        "<h3>Food List Help</h3> \
 				<p>This screen lists all food items from the category(s) selected on the previous page.  Scroll down \
 					to view the entire list.  </p> \
 				<p>Select a food to put on your plate by touching the food item.  When a checkmark \
@@ -73,32 +73,31 @@ function getHelpText(pgNum, restId, catsList)
 					for the entered phrase among the chosen categories.</p> \
 				<p>Sort order can be by name or any of the nutritional values.  Once changed, all subsequent \
 					food listings will reflect the new sort order.</p> \
-				<p>To return to the Category listing, press the Back button in the upper left corner.</p><p> &nbsp;</p>';
-	}
-	return helpText;
+				<p>To return to the Category listing, press the Back button in the upper left corner.</p><p> &nbsp;</p>";
+  }
+  return helpText;
 }
-function getFooterMenu(pgNum)
-{
-	var footerMenu = "";
-	switch(pgNum)
-	{
-		default:
-		case 0:
-			footerMenu = '\
+function getFooterMenu(pgNum) {
+  var footerMenu = "";
+  switch (pgNum) {
+    default:
+    case 0:
+      footerMenu =
+        '\
 				<div id="menu_rest">\
 					<table id="menu_bar_rest" cellspacing="0">\
 					<tr>\
 						<td id="menu_help" onclick="menuClicked(this,0)" ontouchstart="menuPressed(this)" \
 							ontouchend="menuReleased(this)" onmousedown="menuPressed(this)" onmouseup="menuReleased(this)">\
-							<img src="../images/question.png" />\
+							<img src="./assets/images/question.png" />\
 						</td>\
 						<td id="menu_creator" onclick="menuClicked(this,0)" ontouchstart="menuPressed(this)" \
 							ontouchend="menuReleased(this)" onmousedown="menuPressed(this)" onmouseup="menuReleased(this)">\
-							created by<br />Ron Boutilier\
+							created by<br /><a id="home-link"  href="http://rboutilier.com/">Ron Boutilier</a>\
 						</td>\
 						<td id="menu_home" onclick="menuClicked(this,0)" ontouchstart="menuPressed(this)" \
 							ontouchend="menuReleased(this)" onmousedown="menuPressed(this)" onmouseup="menuReleased(this)">\
-							<img src="../images/home.png" />\
+							<img src="./assets/images/home.png" />\
 						</td>\
 					</tr>\
 					</table>\
@@ -112,23 +111,24 @@ function getFooterMenu(pgNum)
 						<button class="close_but" onclick="hideHelp(\'rest_help\')">Close</button>\
 					</div>\
 				</div>';
-			break;
-		case 1:
-			footerMenu = '\
+      break;
+    case 1:
+      footerMenu =
+        '\
 				<div id="menu_cats">\
 					<table id="menu_bar_cats" cellspacing="0">\
 					<tr>\
 						<td id="menu_more" onclick="menuClicked(this,1)" ontouchstart="menuPressed(this)" \
 							ontouchend="menuReleased(this)" onmousedown="menuPressed(this)" onmouseup="menuReleased(this)">\
-							<img src="../images/more.png" />\
+							<img src="./assets/images/more.png" />\
 						</td>\
 						<td id="menu_loadfoods" onclick="menuClicked(this)" ontouchstart="menuPressed(this)" \
 							ontouchend="menuReleased(this)" onmousedown="menuPressed(this)" onmouseup="menuReleased(this)">\
 							Load Foods\
 						</td>\
-						<td id="menu_loadfoods_arrow" onclick="menuClicked(this)" ontouchstart="menuPressed(this)" \
+						<td id="menu_home" onclick="menuClicked(this,0)" ontouchstart="menuPressed(this)" \
 							ontouchend="menuReleased(this)" onmousedown="menuPressed(this)" onmouseup="menuReleased(this)">\
-							<img src="../images/right.png" />\
+							<img src="./assets/images/home.png" />\
 						</td>\
 					</tr>\
 					</table>\
@@ -142,22 +142,23 @@ function getFooterMenu(pgNum)
 						<button class="close_but" onclick="hideHelp(\'cats_help\')">Close</button>\
 					</div>\
 				</div>';
-			break;
-		case 2:
-			footerMenu ='\
+      break;
+    case 2:
+      footerMenu =
+        '\
 				<div id="menu_food">\
 					<table id="menu_bar_food" cellspacing="0">\
 					<tr>\
 						<td id="menu_more" onclick="menuClicked(this,2)" ontouchstart="menuPressed(this)" \
 							ontouchend="menuReleased(this)" onmousedown="menuPressed(this)" onmouseup="menuReleased(this)">\
-							<img src="../images/more.png" />\
+							<img src="./assets/images/more.png" />\
 						</td>\
 						<td id="menu_calories">\
 							Total Calories: <span id="calories">0</span>\
 						</td>\
 						<td id="menu_nutrients" onclick="menuClicked(this)" ontouchstart="menuPressed(this)" \
 							ontouchend="menuReleased(this)" onmousedown="menuPressed(this)" onmouseup="menuReleased(this)">\
-							<img src="../images/calc.png" />\
+							<img src="./assets/images/calc.png" />\
 						</td>\
 					</tr>\
 					</table>\
@@ -217,137 +218,138 @@ function getFooterMenu(pgNum)
 						<button class="close_but" onclick="hideHelp(\'food_help\')">Close</button>\
 					</div>\
 				</div>';
-	}
-	return footerMenu;
+  }
+  return footerMenu;
 }
-function getSlideMenu(pgNum)
-{
-	var slideMenu = "";
-	switch(pgNum)
-	{
-		default:
-		case 0:
-			slideMenu = '\
+function getSlideMenu(pgNum) {
+  var slideMenu = "";
+  switch (pgNum) {
+    default:
+    case 0:
+      slideMenu =
+        '\
 				<div id="slide_menu_rest" class="slide_down">\
 					<table class="slide_menu_table">\
 					<tr>\
 						<td id="menu_help_r" class="ul" onclick="menuClicked(this,0)" \
 							ontouchstart="menuPressed(this)" \
 							ontouchend="menuReleased(this)" onmousedown="menuPressed(this)" onmouseup="menuReleased(this)">\
-							<img src="../images/question.png" /><br />Help\
+							<img src="./assets/images/question.png" /><br />Help\
 						</td>\
 						<td id="menu_search_r" class="uc" onclick="menuClicked(this,0)"\
 							ontouchstart="menuPressed(this)" \
 							ontouchend="menuReleased(this)" onmousedown="menuPressed(this)" onmouseup="menuReleased(this)">\
-							<img src="../images/search.png" />\
+							<img src="./assets/images/search.png" />\
 						</td>\
 						<td id="menu_ur_r" class="ur" onclick="menuClicked(this,0)" \
 							ontouchstart="menuPressed(this)" \
 							ontouchend="menuReleased(this)" onmousedown="menuPressed(this)" onmouseup="menuReleased(this)">\
-							<img src="../images/home.png" />\
+							<img src="./assets/images/home.png" />\
 						</td>\
 					</tr>\
 					<tr>\
 						<td id="menu_close_r" class="ll" onclick="menuClicked(this,0)"\
 							ontouchstart="menuPressed(this)" \
 							ontouchend="menuReleased(this)" onmousedown="menuPressed(this)" onmouseup="menuReleased(this)">\
-							<img src="../images/close.png" /><br />Close\
+							<img src="./assets/images/close.png" /><br />Close\
 						</td>\
 						<td id="menu_lc_r" class="lc" onclick="menuClicked(this,0)"\
 							ontouchstart="menuPressed(this)" \
 							ontouchend="menuReleased(this)" onmousedown="menuPressed(this)" onmouseup="menuReleased(this)">\
-							<img src="../images/question.png" />\
+							<img src="./assets/images/question.png" />\
 						</td>\
 						<td id="menu_lr_r" class="lr" onclick="menuClicked(this,0)"\
 							ontouchstart="menuPressed(this)" \
 							ontouchend="menuReleased(this)" onmousedown="menuPressed(this)" onmouseup="menuReleased(this)">\
-							<img src="../images/more.png" />\
+							<img src="./assets/images/more.png" />\
 						</td>\
 					</tr>\
 					</table>\
 				</div><!-- end of slide_menu -->';
-			break;
-		case 1:
-			slideMenu = '\
+      break;
+    case 1:
+      slideMenu =
+        '\
 				<div id="slide_menu_cats" class="slide_down">\
 					<table class="slide_menu_table">\
 					<tr>\
 						<td id="menu_help_c" class="ul" onclick="menuClicked(this,1)"\
 							ontouchstart="menuPressed(this)" \
 							ontouchend="menuReleased(this)" onmousedown="menuPressed(this)" onmouseup="menuReleased(this)">\
-							<img src="../images/question.png" /><br />Help\
+							<img src="./assets/images/question.png" /><br />Help\
 						</td>\
 						<td id="menu_search_c" class="uc" onclick="menuClicked(this,1)" \
 							ontouchstart="menuPressed(this)" \
 							ontouchend="menuReleased(this)" onmousedown="menuPressed(this)" onmouseup="menuReleased(this)">\
-							<img src="../images/search.png" /><br />Search Foods\
+							<img src="./assets/images/search.png" /><br />Search Foods\
 						</td>\
 						<td id="menu_sort_c" class="ur" onclick="menuClicked(this,1)"\
 							ontouchstart="menuPressed(this)" \
 							ontouchend="menuReleased(this)" onmousedown="menuPressed(this)" onmouseup="menuReleased(this)">\
-							<img src="../images/sort.png" /><br />Sort Foods\
+							<img src="./assets/images/sort.png" /><br />Sort Foods\
 						</td>\
 					</tr>\
 					<tr>\
 						<td id="menu_close_c" class="ll" onclick="menuClicked(this,1)" \
 							ontouchstart="menuPressed(this)" \
 							ontouchend="menuReleased(this)" onmousedown="menuPressed(this)" onmouseup="menuReleased(this)">\
-							<img src="../images/close.png" /><br />Close\
+							<img src="./assets/images/close.png" /><br />Close\
 						</td>\
 						<td id="menu_home_c" class="lc" onclick="menuClicked(this,1)" \
 							ontouchstart="menuPressed(this)" \
 							ontouchend="menuReleased(this)" onmousedown="menuPressed(this)" onmouseup="menuReleased(this)">\
-							<img src="../images/home.png" /><br />Home Page\
+							<img src="./assets/images/home.png" /><br />RBoutilier.com\
 						</td>\
 						<td id="menu_uncheck_c" class="lr" onclick="menuClicked(this,1)"\
 							ontouchstart="menuPressed(this)" \
 							ontouchend="menuReleased(this)" onmousedown="menuPressed(this)" onmouseup="menuReleased(this)">\
-							<img src="../images/uncheck.png" /><br />Uncheck All\
+							<img src="./assets/images/uncheck.png" /><br />Uncheck All\
 						</td>\
 					</tr>\
 					</table>\
 				</div><!-- end of slide_menu -->';
-			break;
-		case 2:
-			slideMenu = '\
+      break;
+    case 2:
+      slideMenu =
+        '\
 				<div id="slide_menu_food" class="slide_down">\
 					<table class="slide_menu_table">\
 					<tr>\
 						<td id="menu_help_f" class="ul" onclick="menuClicked(this,2)" \
 							ontouchstart="menuPressed(this)" \
 							ontouchend="menuReleased(this)" onmousedown="menuPressed(this)" onmouseup="menuReleased(this)">\
-							<img src="../images/question.png" /><br />Help\
+							<img src="./assets/images/question.png" /><br />Help\
 						</td>\
 						<td id="menu_search_f" class="uc" onclick="menuClicked(this,2)"\
 							ontouchstart="menuPressed(this)" \
 							ontouchend="menuReleased(this)" onmousedown="menuPressed(this)" onmouseup="menuReleased(this)">\
-							<img src="../images/search.png" /><br />Search Foods\
+							<img src="./assets/images/search.png" /><br />Search Foods\
 						</td>\
 						<td id="menu_sort_f" class="ur" onclick="menuClicked(this,2)"\
 							ontouchstart="menuPressed(this)" \
 							ontouchend="menuReleased(this)" onmousedown="menuPressed(this)" onmouseup="menuReleased(this)">\
-							<img src="../images/sort.png" /><br />Sort Foods\
+							<img src="./assets/images/sort.png" /><br />Sort Foods\
 						</td>\
 					</tr>\
 					<tr>\
 						<td id="menu_close_f" class="ll" onclick="menuClicked(this,2)"\
 							ontouchstart="menuPressed(this)" \
 							ontouchend="menuReleased(this)" onmousedown="menuPressed(this)" onmouseup="menuReleased(this)">\
-							<img src="../images/close.png" /><br />Close\
+							<img src="./assets/images/close.png" /><br />Close\
 						</td>\
 						<td id="menu_home_f" class="lc" onclick="menuClicked(this,2)" \
 							ontouchstart="menuPressed(this)" \
 							ontouchend="menuReleased(this)" onmousedown="menuPressed(this)" onmouseup="menuReleased(this)">\
-							<img src="../images/home.png" /><br />Home Page\
+							<img src="./assets/images/home.png" /><br />RBoutilier.com\
 						</td>\
 						<td id="menu_uncheck_f" class="lr" onclick="menuClicked(this,2)" \
 							ontouchstart="menuPressed(this)" \
 							ontouchend="menuReleased(this)" onmousedown="menuPressed(this)" onmouseup="menuReleased(this)">\
-							<img src="../images/uncheck.png" /><br />Uncheck All\
+							<img src="./assets/images/uncheck.png" /><br />Uncheck All\
 						</td>\
 					</tr>\
 					</table>\
 				</div><!-- end of slide_menu -->';
-	}
-	return slideMenu;
+  }
+  return slideMenu;
 }
