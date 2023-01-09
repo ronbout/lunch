@@ -682,30 +682,42 @@ button {
   margin-bottom: 0;
 }
 .radio_on {
-  background-image: url(../images/radio_on.png) !important;
+  /* background-image: url(../images/radio_on.png) !important; */
+  background-image: url(./assets/images/li_circle_check2.png),
+    linear-gradient(#eee, #ddd);
   background-position: left center !important;
   background-repeat: no-repeat !important;
   padding-left: 50px !important;
+  height: 20px;
 }
 .radio_off {
-  background-image: url(../images/radio_off.png) !important;
+  /* background-image: url(../images/radio_off.png) !important; */
+  background-image: url(./assets/images/li_circle_uncheck.png),
+    linear-gradient(#eee, #ddd);
   background-position: left center !important;
   background-repeat: no-repeat !important;
   padding-left: 50px !important;
+  height: 20px;
 }
 .radio_on_pressed {
-  background-image: url(../images/radio_on.png) !important;
+  /* background-image: url(../images/radio_on.png) !important; */
+  background-image: url(./assets/images/li_circle_check2.png),
+    linear-gradient(#eee, #ddd);
   background-color: #aaa !important;
   background-position: left center !important;
   background-repeat: no-repeat !important;
   padding-left: 50px !important;
+  height: 20px;
 }
 .radio_off_pressed {
-  background-image: url(../images/radio_off.png) !important;
+  /* background-image: url(../images/radio_off.png) !important; */
+  background-image: url(./assets/images/li_circle_uncheck.png),
+    linear-gradient(#eee, #ddd);
   background-color: #aaa !important;
   background-position: left center !important;
   background-repeat: no-repeat !important;
   padding-left: 50px !important;
+  height: 20px;
 }
 #sort_container {
   position: absolute;
