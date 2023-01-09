@@ -726,12 +726,8 @@ function liCatsClick(catId, thisLi) {
     // turn off any selected cats as View All takes precedence
     var catListUl = document.querySelector("#ul_cats");
     var catList = catListUl.querySelectorAll(".li_checked");
-    console.log(catList);
     catList.forEach((e) => {
-      console.log("e: ", e);
-      console.log(e.className);
       e.className = e.className.replace("li_checked", "li_unchecked");
-      console.log(e.className);
     });
     thisCheck.className = thisCheck.className.replace(
       "li_unchecked",
@@ -895,11 +891,17 @@ function menuClicked(thisMenu, pgNum) {
       } else hideNutrients();
       break;
     case "menu_uncheck_c":
+      if (1 === catsObj[0]) {
+        hideMenu(menuName);
+        break;
+      }
       uncheckAll("cats_pg");
       catsObj = { 0: 1 };
-      v = document.getElementById("view_all");
-      if (~v.className.indexOf("li_unchecked"))
+      var vParent = document.getElementById("view_all");
+      var v = vParent.childNodes[0];
+      if (~v.className.indexOf("li_unchecked")) {
         v.className = v.className.replace("li_unchecked", "li_checked");
+      }
       hideMenu(menuName);
       break;
     case "menu_uncheck_f":
